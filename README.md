@@ -34,3 +34,4 @@ NOTE: The certificate used in the deployment is a self signed certificate that w
 ##Known Issues and Limitations
 - The template uses username/password for provisioning cluster nodes in the cluster. Ideally it would use an SSH key
 - The template deploys Cassandra data nodes configured to use ephemeral storage and attaches a data disk that can be used for data backups in the event of a cluster failure resulting in the loss of the data on the ephemeral disks.  Ideally it would use premium storage and support a backup strategy.
+test

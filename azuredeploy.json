@@ -35,8 +35,7 @@
         4,
         12,
         36,
-        120,
-        240
+        90
       ],
       "metadata": {
         "description": "The number of virtual machines to provision for the cluster"
@@ -44,9 +43,8 @@
     },
     "clusterVmSize": {
       "type": "string",
-      "defaultValue": "Standard_D3",
+      "defaultValue": "Standard_D12",
       "allowedValues": [
-        "Standard_D4",
         "Standard_D12",
         "Standard_D13",
         "Standard_D14",
@@ -119,7 +117,7 @@
       "scripts": [
         "[concat(variables('templateBaseUrl'), 'dsenode.sh')]",
         "[concat(variables('templateBaseUrl'), 'opscenter.sh')]",
-        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
+        "https://raw.githubusercontent.com/DSPN/azure-arm-dse/master/vm-disk-utils-0.1.sh"
       ]
     },
     "sharedStorageAccountName": "[concat(parameters('clusterName'),'cmn')]",

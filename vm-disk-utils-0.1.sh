@@ -230,4 +230,3 @@ if [ "$RAID_CONFIGURATION" -eq 1 ]; then
 else
   scan_partition_format
 fi
-

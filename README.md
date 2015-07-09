@@ -1,4 +1,4 @@
-Deploy a DataStax Enterprise Cluster to Azure
+# Deploy a DataStax Enterprise Cluster to Azure
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FDSPN%2Fazure-arm-dse%2Fmaster%2FmainTemplate.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>

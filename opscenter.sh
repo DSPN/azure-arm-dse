@@ -1,13 +1,6 @@
 #!/bin/bash
 # This script installs Oracle Java and DataStax OpsCenter.  It then deploys a DataStax Enterprise cluster using OpsCenter.
 
-# You must be root to run this script
-if [ "${UID}" -ne 0 ];
-then
-    echo "You must be root to run this program." >&2
-    exit 3
-fi
-
 # TEMP FIX - Re-evaluate and remove when possible
 # This is an interim fix for hostname resolution in current VM (If it does not exist add it)
 grep -q "${HOSTNAME}" /etc/hosts
@@ -102,10 +95,10 @@ expand_ip_range() {
     for (( n=LAST_OCTET; n<("${IP_RANGE[1]}"+LAST_OCTET) ; n++))
     do
       HOST="${BASE_IP}.${n}"
-      EXPAND_STATICIP_RANGE_RESULTSS+=($HOST)
+      EXPAND_STATICIP_RANGE_RESULTS+=($HOST)
     done
   done
-  echo "${EXPAND_STATICIP_RANGE_RESULTSS[@]}"
+  echo "${EXPAND_STATICIP_RANGE_RESULTS[@]}"
 }
 
 NODE_IP_LIST=$(expand_ip_range "$NODE_IP_RANGE" "$NUM_NODE_IP_RANGE")

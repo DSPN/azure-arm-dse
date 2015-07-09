@@ -116,12 +116,12 @@
     "clusterSize36" : {
       "storageAccountCount" : 2,
       "vmCount" : 18,
-      "nodeList": "[concat(variables('networkSettings').subnet.dse0.statics.clusterRange.base, variables('networkSettings').subnet.dse0.statics.clusterRange.start, '-18', variables('networkSettings').subnet.dse1.statics.clusterRange.base, variables('networkSettings').subnet.dse1.statics.clusterRange.start, '-18')]"
+      "nodeList": "[concat(variables('networkSettings').subnet.dse0.statics.clusterRange.base, variables('networkSettings').subnet.dse0.statics.clusterRange.start, '-18', ';', variables('networkSettings').subnet.dse1.statics.clusterRange.base, variables('networkSettings').subnet.dse1.statics.clusterRange.start, '-18')]"
     },
     "clusterSize90" : {
       "storageAccountCount" : 5,
       "vmCount" : 18,
-      "nodeList": "[concat(variables('networkSettings').subnet.dse0.statics.clusterRange.base, variables('networkSettings').subnet.dse0.statics.clusterRange.start, '-18', variables('networkSettings').subnet.dse1.statics.clusterRange.base, variables('networkSettings').subnet.dse1.statics.clusterRange.start, '-18',variables('networkSettings').subnet.dse2.statics.clusterRange.base, variables('networkSettings').subnet.dse2.statics.clusterRange.start, '-18',variables('networkSettings').subnet.dse3.statics.clusterRange.base, variables('networkSettings').subnet.dse3.statics.clusterRange.start, '-18',variables('networkSettings').subnet.dse4.statics.clusterRange.base, variables('networkSettings').subnet.dse4.statics.clusterRange.start, '-18')]"
+      "nodeList": "[concat(variables('networkSettings').subnet.dse0.statics.clusterRange.base, variables('networkSettings').subnet.dse0.statics.clusterRange.start, '-18', ';', variables('networkSettings').subnet.dse1.statics.clusterRange.base, variables('networkSettings').subnet.dse1.statics.clusterRange.start, '-18',';',variables('networkSettings').subnet.dse2.statics.clusterRange.base, variables('networkSettings').subnet.dse2.statics.clusterRange.start, '-18',';',variables('networkSettings').subnet.dse3.statics.clusterRange.base, variables('networkSettings').subnet.dse3.statics.clusterRange.start, '-18',';',variables('networkSettings').subnet.dse4.statics.clusterRange.base, variables('networkSettings').subnet.dse4.statics.clusterRange.start, '-18')]"
     },
     "networkSettings": {
       "virtualNetworkName": "[parameters('clusterName')]",
@@ -348,7 +348,7 @@
             "value": "[parameters('adminUsername')]"
           },
           "adminPassword": {
-            "value": "[parameters('adminPassword')]"
+            "value": "[parameters('opsCenterAdminPassword')]"
           },
           "namespace": {
             "value": "opc"
@@ -364,7 +364,7 @@
               "nodeList": "[variables('clusterSpec').nodeList]",
               "subnetCount" : "[variables('clusterSpec').storageAccountCount]",
               "dataStaxUsername": "[parameters('dataStaxUsername')]",
-              "dataStaxPassword": "[parameters('opsCenterAdminPassword')]"
+              "dataStaxPassword": "[parameters('dataStaxPassword')]"
             }
           }
         }
